@@ -1,12 +1,17 @@
 (ns wmealing.resource-test
-  (:gen-class))
+  (:gen-class)
+  (:require [clojure.java.io :as io]))
 
-(defn greet
-  "Callable entry point to the application."
-  [data]
-  (println (str "Hello, " (or (:name data) "World") "!")))
+(def data-file )
+
+(defn load-text-file []
+  (io/resource
+   "hello.txt" )
+  )
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (greet {:name (first args)}))
+;;  (println (slurp (load-text-file)))
+  (println (clojure.java.io/resource "."))
+  )

@@ -3,5 +3,5 @@
             [wmealing.resource-test :refer :all]))
 
 (deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+  (testing "Loading a file from a resource works"
+    (is (= "this is hello.txt\n" (slurp (load-text-file) ) )))  )
